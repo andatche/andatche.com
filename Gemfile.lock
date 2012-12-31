@@ -1,18 +1,46 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    adsf (1.1.1)
+      rack (>= 1.0.0)
     builder (3.1.4)
+    capistrano (2.13.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     colored (1.2)
     cri (2.3.0)
       colored (>= 1.2)
+    fssm (0.2.9)
+    highline (1.6.15)
     kramdown (0.14.1)
+    mime-types (1.19)
     nanoc (3.4.3)
       cri (~> 2.2)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.6.2)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
+    nokogiri (1.5.6)
+    rack (1.4.1)
+    rake (10.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  adsf
   builder
+  capistrano
+  fssm
   kramdown
+  mime-types
   nanoc
+  nokogiri
+  rack
+  rake
