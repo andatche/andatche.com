@@ -1,0 +1,18 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    builder (3.1.4)
+    colored (1.2)
+    cri (2.3.0)
+      colored (>= 1.2)
+    kramdown (0.14.1)
+    nanoc (3.4.3)
+      cri (~> 2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  builder
+  kramdown
+  nanoc

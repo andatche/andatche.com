@@ -1,0 +1,17 @@
+--- 
+title: Recent Blog Posts
+feed_url: /blog/feed/
+--- 
+<div class="row">
+  <div class="span12 columns">
+    <h1>Recent Blog Posts</h1>
+    <ul class="unstyled">
+      <% recent_posts.each do |post| %>
+        <%= render "_blog_post_summary", :post => post %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="span4 columns">
+    <%= render "_blog_sidebar" %>
+  </div>
+</div>

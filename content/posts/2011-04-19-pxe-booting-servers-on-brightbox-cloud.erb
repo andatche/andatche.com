@@ -1,0 +1,140 @@
+---
+title: PXE booting servers on Brightbox cloud
+author: Ben
+tags: [brightbox, cloud, linux, sysadmin]
+---
+
+I've been playing with PXE booting servers on the <a href="http://beta.brightbox.com/beta">Brightbox cloud</a> over the last few days, which is rather cool! It's also incredibly useful for building OS images which can be snapshotted and registered for later use. It's quite simple really, here's a quick guide.
+
+If you haven't already, go ahead and register for the cloud beta, read through the docs about getting started and make yourself familiar with the basics of the command line client.
+
+First let's build a new server to PXE boot using the command line client.
+<pre>ben@spud:~$ brightbox-servers create -n "PXE Boot" img-2ab98
+INFO: client_id: ben
+Creating a nano (typ-4nssg) server with image Ubuntu Lucid 10.04 server (img-2ab98)
+
+ id         status    type  zone   created_on  image_id   cloud_ips  name    
+------------------------------------------------------------------------------
+ srv-m1tgj  creating  nano  gb1-b  2011-04-18  img-2ab98             PXE Boot
+------------------------------------------------------------------------------</pre>
+It doesn't really matter which image you choose at this point, if you're PXE booting an installer it's likely you'll be erasing and repartitioning the disk anyway (there'll be some blank images available soon). If you're intending to snapshot the server for registration as a machine image later, it's best to use the smallest disk possible as this will be the minimum required for your image later on. In this case we're using a nano, the default, with a 20GB disk.
+
+Once the server has finished creating, activate its web-based console so we can get to the POST screen.
+<pre>ben@spud:~$ brightbox-servers activate_console srv-m1tgj
+INFO: client_id: ben
+Activating console for server srv-m1tgj
+
+ url                                          token     expires             
+-----------------------------------------------------------------------------
+ https://srv-m1tgj.console.gb1.brightbox.com  mk6rr2z8  2011-04-18T23:33:12Z
+-----------------------------------------------------------------------------</pre>
+Fire up your web browser and login to the console. Once logged in hit the "Send CtrlAltDel" button in the right hand corner and wait for the machine to reboot. During the POST, hit Ctrl-B when you see "Press Ctrl-B to configure gPXE" to start <a href="http://etherboot.org/wiki/start">gPXE</a>.
+
+<img class="centered" title="Brightbox PXE boot console" src="/assets/img/blog/2011/console.png" alt="Brightbox PXE boot console" />
+
+gPXE is a GPL'd replacement for proprietary PXE boot ROMs that has lots of nice features, including the ability to boot from HTTP, which we're going to make use of here.
+
+There are a number of choices when it comes to deciding exactly what we'd like to boot from here, I'll cover 3 options that are useful for image building.
+<ul>
+  <li>Booting a preprepared initrd and kernel image</li>
+  <li>Booting an ISO with memdisk</li>
+  <li>Chain loading with <a href="http://www.netboot.me/">netboot.me</a></li>
+</ul>
+Before we do anything else though, we need to get network connectivity inside the gPXE environment. We can make use of dhcp to automatically configure everything for us.
+<pre>gPXE&gt; dhcp net0</pre>
+Now we're ready to boot something.
+<h3>Booting a preprepared initrd and kernel image</h3>
+A number of Linux distributions provide initrd and kernel images that are preprepared for PXE booting into an installer or rescue environment including Debian, Ubuntu, RHEL, the System Rescue CD and many others. This is particularly easy with Red Hat derived distributions, here we'll boot the Scientific Linux 6.0 installer though the same procedure could easily be used for CentOS, Fedora, RHEL etc.
+
+Most Red Hat derivatives provide the required kernel and initrd on their download mirrors, which can usually be found under <code>os/images/pxeboot/</code> in the desired version and architecture directory. Go ahead and browse the mirror of your favourite RH clone and locate the vmlinuz and initrd.img for your preferred version and architecture and make a not of their URLs, in this case
+
+<code>http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/vmlinuz</code>
+<code>http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/initrd.img</code>
+
+Next, we need to tell gPXE where to find our kernel and initrd.
+<pre>gPXE&gt; kernel http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/vmlinuz
+> http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/vmlinuz..........
+
+gPXE&gt; initrd http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/initrd.img
+> http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/initrd.img...............
+..................................................</pre>
+
+It can take quite a long time for them to download, particularly if the initrd.img is large, gPXE's TCP stack isn't really tuned for performance. It's generally a lot quicker if you use a mirror that's geographically close (to the UK in this case), latency seems to have a huge impact. Anyway, once the downloads have finished, we're ready to boot!
+
+<pre>gPXE> boot</pre>
+
+<img class="centered" src="/assets/img/blog/2011/anaconda.png" alt="Anaconda, installing Scientific Linux 6.0" title="Anaconda, installing Scientific Linux 6.0" />
+
+If everything has gone to plan, you should seen the kernel boot messages scrolling by then the anaconda installer starting up. Success!
+
+Now it's just a case of completing the installation procedure and rebooting into your new install. In the case of RH derivatives, anaconda will ask a few simple questions on language and keyboard layout before asking "What type of media contains the installation image?" To keep the PXE boot initrd small, it doesn't include everything required to complete the installation so we need to tell anaconda where to find the rest of what it needs.  Choose the URL option then complete the network configuration options, when asked for the URL, enter the path of the <code>os/</code> directory from the mirror we used previously, in this case <code>http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os</code>.
+
+That's it! Go and make a coffee while you wait for the installation to complete.
+
+<h3>Booting an ISO with memdisk</h3>
+
+Not all operating systems are kind enough to provide native PXE boot support. Often, the only available installation media for an OS is a cd/dvd or ISO image, particularly in the case of Microsoft Windows. Unfortunately PXE does not support booting from an ISO natively (boo!).
+
+<img class="centered" src="/assets/img/blog/2011/debian.png" alt="Debian Installer" title="Debian Installer" />
+
+Never fear, <a href="http://syslinux.zytor.com/wiki/index.php/MEMDISK">memdisk</a> to the rescue! Memdisk, from the SYSLINUX project, is designed to allow booting legacy operating systems. "MEMDISK can boot floppy images, hard disk images and some ISO images." Unfortunately memdisk's support for booting ISOs is somewhat <a href="http://syslinux.zytor.com/wiki/index.php/MEMDISK#INT_13h_access:_Not_all_images_will_boot_completely.21">limited</a> so YMMV. Here, we'll boot the Debian netboot installer ISO.
+
+It's important to make note of a few issues here when choosing an ISO to boot. Memdisk will load the entire ISO into a ram disk before booting, so it's important you use a server with enough ram to contain the entire ISO and still leave enough free memory for the installation to complete successfully. A large DVD ISO will require <strong>lots</strong> of memory! Also, as previously mentioned, gPXE's TCP stack is not tuned for performance, downloading a large ISO can take a <strong>very</strong> long time! Using a fast, geographically close mirror will help.
+
+First though, we need a PXE bootable memdisk! The nice folks at <a href="http://www.slitaz.org/en/">SliTaz GNU/Linux</a> provide just such a thing on their download mirror at <code>http://distro.ibiblio.org/slitaz/pxe/memdisk</code>, which we'll make use of.
+
+First, we need to tell gPXE to use the memdisk image as the kernel it should boot from.
+
+<pre>gPXE&gt; kernel http://distro.ibiblio.org/slitaz/pxe/memdisk
+> http://distro.ibiblio.org/slitaz/pxe/memdisk..............</pre>
+
+Next, we tell gPXE to use the ISO we'd like to boot as the initrd, in this case we're using the Debian netboot iso from <code>http://ftp.nl.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/mini.iso</code>
+
+<pre>gPXE&gt; initrd http://ftp.nl.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/mini.iso
+> http://ftp.nl.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/mini.iso.......
+...........................................................................</pre>
+
+Now is probably a good time to go make coffee, while you wait for the ISO to download. Once it's finished, we're ready to boot!
+
+<pre>gPXE> boot</pre>
+
+If the ISO is supported and everything has worked correctly, it should now be booting!
+
+<h3>Chain loading with netboot.me</h3>
+
+As ever, I've saved the easiest option until last! :) <a href="http://www.netboot.me/">netboot.me</a> is an awesome service that "allows you to boot nearly any operating system or utility on any computer with a wired internet connection." They provide a custom built PXE environment which includes an easy-to-navigate menu system offering the ability to boot a number of games, OS installers, live OSes and system tools over the internet with little effort.
+
+The best thing is, we can chain load the netboot.me PXE environment over HTTP directly from gPXE with a single command! The PXE environment is available via HTTP at <code>http://static.netboot.me/gpxe/netbootme.kpxe</code> so all we have to do it tell gPXE to chain load it.
+
+<pre>gPXE> chain http://static.netboot.me/gpxe/netbootme.kpxe
+> http://static.netboot.me/gpxe/netbootme.kpxe.................</pre>
+
+gPXE will download and boot the netboot.me environment, after waiting a few seconds for netboot.me to start you should be presented with the main menu, which is fairly self-explanatory. Time to reward yourself with a game of nethack! :)
+
+<img class="centered" src="/assets/img/blog/2011/netboot.me_.png" alt="netboot.me menu" title="netboot.me menu" />
+
+<h3>Finishing off</h3>
+
+So, you've finished installing your shiny new OS, but what to do now?! Before customising anything on the fresh installation, you might want to make a snapshot of the server to use for building new servers in future, certainly a lot quicker than PXE booting!
+
+(NOTE: You may need to make some alterations to the image after installing and before snapshotting if you want to use the snapshot for building new servers later. Often things like networking config, hostname etc. are configured statically during the installation procedure, these will need to be changed/removed.)
+
+First, we'll take a snapshot of the server
+
+<pre>ben@spud:~$ brightbox-servers snapshot srv-m1tgj
+INFO: client_id: ben
+Snapshotting server srv-m1tgj</pre>
+
+Next, need to find the id of the newly created snapshot.
+
+<pre>ben@spud:~$ brightbox-images list
+...
+img-o031h  acc-vhba2  snapshot  2011-04-19  creating  20480  Snapshot of srv-m1tgj 19 Apr 13:16 (i686)</pre>
+
+Once the snapshot is finished creating, the <code>/images</code> directory of your account's FTP library will contain a gzipped copy of the snapshot, in this case <code>img-o031h.gz</code>. You can go ahead and start building images from the snapshot using its id right away!
+
+<pre>ben@spud:~$ brightbox-servers create img-o031h</pre>
+
+<h3>Conclusion</h3>
+
+I've covered some of the basic aspects of PXE booting using gPXE on the Brightbox cloud here, which should be enough to use for OS installation and system rescue. There are also lots of things I haven't covered, it's possible to do many weird and wonderful things with gPXE that are beyond the scope of this post, perhaps I'll cover them in the future. ;)

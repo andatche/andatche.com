@@ -1,0 +1,1 @@
+<%= atom_feed :limit => 25, :articles => posts.reject{ |i| i[:is_hidden] } %>

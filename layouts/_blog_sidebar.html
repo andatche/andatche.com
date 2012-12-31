@@ -1,0 +1,21 @@
+    <h2>Feeds</h2>
+    <ul class="unstyled">
+      <li><a href="<%= @item[:feed_url] %>">atom</a></li>
+    </ul>
+    <h2>Archives</h2>
+    <ul class="unstyled">
+      <% monthly_archives.each do |ma| %>
+        <li>
+          <%# <a href="/blog/2011/11/">November 2011</a> %>
+          <a href="<%= ma.to_path %>"><%= ma.to_s %></a>
+        </li>
+      <% end %>
+    </ul>
+    <h2>Tags</h2>
+    <uL class="unstyled">
+      <% all_post_tags.each do |tag| %>
+        <li>
+         <a href="<%= "/blog/tag/#{slugify(tag)}" %>"><%= "#{tag}" %></a>
+        </li>
+      <% end %>
+    </ul>

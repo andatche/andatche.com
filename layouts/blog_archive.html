@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="span12 columns">
+    <h1>Archived Blog Posts <small> <%= @item[:title] %></small></h1>
+    <ul class="unstyled">  
+      <% @item[:posts].each do |post| %>
+        <%= render "_blog_post_summary", :post => post %>
+      <% end %>
+    </ul>
+  </div>
+    <div class="span4 columns">
+    <%= render "_blog_sidebar" %>
+  </div>
+</div>

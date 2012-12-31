@@ -1,0 +1,5 @@
+<article class="post">
+  <h1><%= @post[:title] %></h1>
+  <div class="post-meta"><%= attribute_to_time(@post[:created_at]).strftime("%d %B %Y") %></div>
+  <%= @post.compiled_content %>
+</article>

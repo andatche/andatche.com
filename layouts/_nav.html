@@ -1,0 +1,34 @@
+      <div class="topbar-spacer">
+        <div class="topbar-wrapper" style="z-index: 5;">
+          <div class="topbar">
+            <div class="container fixed">
+              <h3><a href="/">andatche.com</a></h3>
+              <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/minecraft">Minecraft</a></li>
+              </ul>
+              <ul class="nav secondary-nav">
+                <!-- Pagination links -->
+                <% if @item[:prev_url] != nil %>
+                  <li>
+                    <a href="<%= @item[:prev_url] %>">&lsaquo; Older</a>
+                  </li>
+                <% end %>
+
+                <% if @item[:next_url] != nil %>
+                  <li>
+                    <a href="<%= @item[:next_url] %>">Newer &rsaquo;</a>
+                  </li>
+                <% end %>
+                  <li>
+                    <form action="http://www.google.com/search" method="get" onSubmit="Gsitesearch(this)">
+                      <input name="q" type="hidden" />
+                      <input name="qfront" type="text" placeholder="Search" />
+                    </form>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div> <!-- topbar-wrapper -->
+      </div>
