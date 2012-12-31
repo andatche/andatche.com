@@ -17,17 +17,18 @@ You can also find me on [Twitter](http://twitter.com/andatche), [Github](https:/
 ## Some stuff I'm interested in
 
 * [Debian GNU/Linux](http://debian.org), my favourite [free](http://www.debian.org/intro/free) Operating System.
-* The important work of the [Open Rights Group](http://www.openrightsgroup.org) and [Electronic Frontier Foundation](https://www.eff.org) towards protecting freedom on the internet.
+* The work of the [Open Rights Group](http://www.openrightsgroup.org) and [Electronic Frontier Foundation](https://www.eff.org) towards protecting important freedoms on the internet.
 * The [Free Software Foundation](http://www.fsf.org/).
 * [Virtualisation](http://libvirt.org/) on Linux with [KVM](http://www.linux-kvm.org/page/Main_Page).
 * Configuration automation with [Puppet](http://puppetlabs.com).
 * [Network Engineering](/blog/tag/networking/).
 * [IPv6](http://en.wikipedia.org/wiki/IPv6) proliferation, see what you can do [here](http://www.ipv6actnow.org/). Get your own IPv6 tunnel from [Hurricane Electric](http://www.tunnelbroker.net/).
 * [Minecraft](http://andatche.com/minecraft/), the ultimate time-sink!
+* [Brightbox](http://brightbox.com)'s new Infrastructure-as-a-Service (Cloud) platform.
 
 ## This site...
 
-Is powered by [Nanoc](http://nanoc.stoneship.org/), a simple static site generator. Content is written in [Markdown](http://daringfireball.net/projects/markdown/) and processed using the [kramdown](http://kramdown.rubyforge.org) filter while the layouts are written in [erb](http://en.wikipedia.org/wiki/ERuby). Compilation and deployment is handled by a simple set of [rake](http://rake.rubyforge.org/) tasks. Foundations for the layout, styling and typography are provided by Twitter's [Bootstrap CSS](http://twitter.github.com/bootstrap/) library and [jQuery](http://jquery.com/). Blog comments are powered by [Disqus](http://disqus.com) and I use [git](http://git-scm.com/) for version control of the whole thing.
+Is powered by [Nanoc](http://nanoc.stoneship.org/), a simple static site generator. Content is written in [Markdown](http://daringfireball.net/projects/markdown/) and processed using the [kramdown](http://kramdown.rubyforge.org) filter while the layouts are written in [erb](http://en.wikipedia.org/wiki/ERuby). Compilation and deployment is handled by a simple set of [rake](http://rake.rubyforge.org/) tasks. Foundations for the layout, styling and typography are provided by Twitter's [Bootstrap CSS](http://twitter.github.com/bootstrap/) library and [jQuery](http://jquery.com/). Blog comments are powered by [Disqus](http://disqus.com) and I use [git](http://git-scm.com/) for version control of the whole thing. The code is on [Github](https://github.com/andatche/andatche.com).
 
 On the server-side, [Apache httpd](http://httpd.apache.org/) running on [Ubuntu GNU/Linux](http://www.ubuntu.com/) hosted on the [Brightbox Cloud](http://brightbox.com). The host is dual-stacked and available via IPv4 and IPv6, hurrah!
 
