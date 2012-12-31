@@ -18,7 +18,7 @@ set :use_sudo, false
 namespace :deploy do
   task :finalize_update do
     run "mkdir -p #{shared_path}/bundle"
-    run "cd #{latest_release} && bundle install --deployment --path #{shared_path}/bundle/vendor"
+    run "cd #{latest_release} && bundle install --deployment --path #{shared_path}/bundle/vendor --without development"
     run "cd #{latest_release} && bundle exec nanoc compile"
   end
   task :restart do
