@@ -1,7 +1,7 @@
 # Target directory for the application on the web and app servers.
 set(:deploy_to) { File.join("", "var", "www", "sites", application) }
 
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 set :scm, :git
 set :repository, "git@github.com:andatche/andatche.com.git"
 
