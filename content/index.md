@@ -2,7 +2,7 @@
 title: Ben Arblaster
 ---
 <h1>Ben Arblaster</h1>
-Sysadmin and packet wrangler at [Brightbox](http://brightbox.com), Ruby hacker, musician and <del>collector</del> hoarder of classic Minis. Oh, and butler to several cats. Remember, "Friends don't let friends get friends hair cut!" Someday it will prove sound advice.
+Sysadmin and packet wrangler at [Brightbox](http://brightbox.com), hacker, musician and butler to several cats. Remember, "Friends don't let friends get friends hair cut!" Someday it will prove sound advice.
 
 ## Contact Me
 
