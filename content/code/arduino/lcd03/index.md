@@ -1,6 +1,6 @@
 # LCD03 Arduino library
 
-LCD03 is an Arduino library for I2C control of the LCD03 20x4 and 16x2 serial LCD modules from Robot Electronics, see http://www.robot-electronics.co.uk/htm/Lcd03tech.htm. It aims to maintain compatibility with the Arduino LiquidCrystal library (version 0017 onwards) , though some features of LiquidCrystal are ommited and additonal features are provided. It supports all features of the LCD03 including custom characters and the ability to read the keypad. Requires Arudino >= 1.0.0.
+LCD03 is an [Arduino](http://arduino.cc/) library for [I2C](http://en.wikipedia.org/wiki/I²C) control of the LCD03 20x4 and 16x2 serial LCD modules from [Robot Electronics](http://www.robot-electronics.co.uk), see [the datasheet](http://www.robot-electronics.co.uk/htm/Lcd03tech.htm) for details. It aims to maintain compatibility with the Arduino [LiquidCrystal](http://arduino.cc/en/Reference/LiquidCrystal) library (version 0017 onwards) , though some features of LiquidCrystal are ommited and additonal features are provided. It supports all features of the LCD03 including custom characters and the ability to read the keypad. Supports Arudino 1.0.0 and newer.
 
 The library is released under the GNU LGPL 2.1.
 
@@ -16,6 +16,8 @@ $ git clone git://github.com/andatche/arduino-lcd03.git LCD03
 </pre>
 
 To install without git, simple use the "ZIP" link from the GitHub page to grab a .zip of the repository and unzip it to a directory named 'LCD03' in your Arduino libraries directory.
+
+You'll need to restart the Arduino IDE after installing before the library will be detected.
 
 ## Functions
 
@@ -159,7 +161,9 @@ Read the state of the (optionally) attached keypad. For more information see "Re
   
 ## Example usage
 
-<pre>
+Make sure you have the LCD03 library installed as above. To use LCD03 simply include Wire.h and "LCD03.h" in your sketch and instantiate a new LCD03 instance.
+
+<pre class="prettyprint linenums languague-c++">
 #include \<Wire.h\>
 #include "LCD03.h"
 
@@ -213,7 +217,9 @@ The `readKeypad()` function returns the 2-byte keypad matrix state (see datashee
 
 ### Example usage
 
-<pre>
+The following examples show some common scenarios where you may want to check for particular inputs.
+
+<pre class="prettyprint linenums languague-c++">
 // Read the current state of the keypad
 uint16_t keystate = lcd.readKeypad();
 
