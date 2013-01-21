@@ -59,8 +59,8 @@ compile '*' do
 
   case item[:extension]
     when 'md'
-      filter :kramdown
       filter :erb
+      filter :kramdown
     when 'erb'
       filter :erb
     when 'haml'
