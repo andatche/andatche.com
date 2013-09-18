@@ -88,5 +88,3 @@ qnvqlf/dYjL7EO7I0bgVx3UUJmDbWW1SGEdxX7C0cJaPSEgDpuDhgPVsRptnZb9Q
 Vc+ydwXYYmBMdhIhpJl3f4oCjLuBq7T0401pthecmIDwlRPZdjK8
 =UVbt
 -----END PGP PUBLIC KEY BLOCK-----</pre>
-
-Please (re)verify as required.
