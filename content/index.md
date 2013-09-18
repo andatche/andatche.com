@@ -2,11 +2,11 @@
 title: Ben Arblaster
 ---
 <h1>Ben Arblaster</h1>
-Sysadmin and packet wrangler at [Brightbox](http://brightbox.com), hacker, musician and butler to several cats. Remember, "Friends don't let friends get friends hair cut!" Someday it will prove sound advice.
+Sysadmin and packet pusher at [Brightbox](http://brightbox.com), hacker, musician and butler to several cats. Remember, "Friends don't let friends get friends hair cut!" Someday it will prove sound advice.
 
 ## Contact Me
 
-You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldnt be happy sharing. My [PGP key](/andatche.asc) fingerprint is <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>.
+You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldn't be happy sharing. My [PGP key](/andatche.asc) fingerprint is <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>.
 
 You can contact me via Jabber/XMPP at <code>andatche@gmail.com</code> (OTR fingerprint <code>EB519946 DE62C9E8 B325D928 42525D1E BD94395F</code>) or <code>ben@brightbox.co.uk</code> (OTR fingerprint <code>BE7840F3 06D4F37D F18C945F 33A99318 BB8C674E</code>).
 
