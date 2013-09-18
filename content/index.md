@@ -6,7 +6,7 @@ Sysadmin and packet wrangler at [Brightbox](http://brightbox.com), hacker, music
 
 ## Contact Me
 
-You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldnt be happy sharing. My [PGP key](/andatche.asc) fingerprint is <code>58A8 46A9 8CC1 792F 2028  9D2B 5D74 9169 BC43 0B14</code>.
+You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldnt be happy sharing. My [PGP key](/andatche.asc) fingerprint is <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>.
 
 You can contact me via Jabber/XMPP at <code>andatche@gmail.com</code> (OTR fingerprint <code>EB519946 DE62C9E8 B325D928 42525D1E BD94395F</code>) or <code>ben@brightbox.co.uk</code> (OTR fingerprint <code>BE7840F3 06D4F37D F18C945F 33A99318 BB8C674E</code>).
 
