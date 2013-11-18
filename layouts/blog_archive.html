@@ -1,13 +1,29 @@
-<div class="row">
-  <div class="span12 columns">
     <h1>Archived Blog Posts <small> <%= @item[:title] %></small></h1>
-    <ul class="unstyled">  
+<div class="row">
+  <div class="col-md-9">
+    <ul class="list-unstyled">  
       <% @item[:posts].each do |post| %>
         <%= render "_blog_post_summary", :post => post %>
       <% end %>
     </ul>
+
+              <ul class="pager">
+                <!-- Pagination links -->
+                <% if @item[:prev_url] != nil %>
+                  <li>
+                    <a href="<%= @item[:prev_url] %>">&lsaquo; Older</a>
+                  </li>
+                <% end %>
+
+                <% if @item[:next_url] != nil %>
+                  <li>
+                    <a href="<%= @item[:next_url] %>">Newer &rsaquo;</a>
+                  </li>
+                <% end %>
+              </ul>
+
   </div>
-    <div class="span4 columns">
+    <div class="col-md-3">
     <%= render "_blog_sidebar" %>
   </div>
 </div>

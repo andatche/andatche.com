@@ -1,29 +1,9 @@
-      <div class="topbar-spacer">
-        <div class="topbar-wrapper" style="z-index: 5;">
-          <div class="topbar">
-            <div class="container fixed">
-              <h3><a href="/">andatche.com</a></h3>
-              <ul>
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
                 <li><a href="/">About</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/code">Code</a></li>
                 <li><a href="/minecraft">Minecraft</a></li>
-              </ul>
-              <ul class="nav secondary-nav">
-                <!-- Pagination links -->
-                <% if @item[:prev_url] != nil %>
-                  <li>
-                    <a href="<%= @item[:prev_url] %>">&lsaquo; Older</a>
-                  </li>
-                <% end %>
-
-                <% if @item[:next_url] != nil %>
-                  <li>
-                    <a href="<%= @item[:next_url] %>">Newer &rsaquo;</a>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div> <!-- topbar-wrapper -->
+        </ul>
+        <h3 class="text-muted"><a href="/">andatche.com</a></h3>
       </div>

@@ -5,7 +5,7 @@
     <title><%= "#{@item[:title]} - " if @item[:title] %>andatche.com</title>
     <meta name="author" content="Ben Arblaster">
     <% if @item[:feed_url] %>
-        <link rel="alternate" type="application/rss+xml" title="andatche.com &raquo; Feed" href="<%= "#{@item[:feed_url]}" %>" />
+    <link rel="alternate" type="application/rss+xml" title="andatche.com &raquo; Feed" href="<%= "#{@item[:feed_url]}" %>" />
     <% end %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -13,14 +13,18 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="/assets/css/bootstrap-1.0.0.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
-    <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
-    <script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/js/jquery/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+
     <script src="/assets/js/google-code-prettify/prettify.js"></script>
-    <script src="/assets/js/application.js"></script>
 
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
 

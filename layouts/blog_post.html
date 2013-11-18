@@ -1,8 +1,8 @@
 <article class="post">
   <h1><%= @item[:title] %></h1>
   <div class="post-meta">
-    <div class="date"><%= (time = attribute_to_time(@item[:created_at])).strftime("%e#{time.day_ordinal_suffix} of %B %Y") %></div>
-    <div class="tags">Tagged: <%= tags_for_post @item %></div>
+      <div class="date text-muted"><span class="glyphicon glyphicon-calendar"></span> <%= (time = attribute_to_time(@item[:created_at])).strftime("%e#{time.day_ordinal_suffix} of %B %Y") %></div>
+      <div class="tags text-muted"><span class="glyphicon glyphicon-tag"> <%= tags_for_post @item %></span></div>
   </div>
   <%= yield %>
 </article>
