@@ -15,6 +15,9 @@ ssh_options[:forward_agent] = true
 
 set :use_sudo, false
 
+set :keep_releases, 5
+after "deploy:update", "deploy:cleanup" 
+
 namespace :deploy do
   task :finalize_update do
     run "mkdir -p #{shared_path}/bundle"
