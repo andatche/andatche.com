@@ -33,17 +33,17 @@ compile "/posts/*/" do
   layout "default"
 end
 
-compile '/blog/' do
+compile '/articles/' do
   filter :erb
 
   layout "default"
 end
 
-compile '/blog/*/feed/' do
+compile '/articles/*/feed/' do
   filter :erb
 end
 
-compile '/blog/*' do
+compile '/articles/*' do
   filter :kramdown
   filter :erb
 
@@ -81,11 +81,11 @@ end
 
 route "/posts/*" do
   # "/posts/2011-01-01-some-title-here" => "/2011/01/01/some-title-here/index.html"
-  "/blog/#{item.identifier.split("/", 3).last.gsub(/^(\d+)-(\d+)-(\d+)-(.*)$/, '\1/\2/\4')}index.html"
+  "/articles/#{item.identifier.split("/", 3).last.gsub(/^(\d+)-(\d+)-(\d+)-(.*)$/, '\1/\2/\4')}index.html"
 end
 
 route '/atom/' do
-  '/blog/feed/index.html'
+  '/articles/feed/index.html'
 end
 
 route '/sitemap/' do

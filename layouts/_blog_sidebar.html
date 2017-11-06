@@ -11,7 +11,7 @@
       <ul class="list-unstyled">
         <% all_post_tags.sort.each do |tag| %>
         <li>
-          <a href="<%= "/blog/tag/#{slugify(tag)}" %>"><%= "#{tag}" %></a>
+          <a href="<%= "/articles/tag/#{slugify(tag)}" %>"><%= "#{tag}" %></a>
         </li>
         <% end %>
       </ul>

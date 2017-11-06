@@ -38,7 +38,7 @@ module ExtendBlogging
       end
 
       def to_path
-        "/blog/#{year}/#{"%.2d" % month}/"
+        "/articles/#{year}/#{"%.2d" % month}/"
       end
     end
     monthly_posts.inject({}) do |hash, (year, months)|
@@ -54,7 +54,7 @@ module ExtendBlogging
       end
 
       def to_path
-        "/blog/#{year}/"
+        "/articles/#{year}/"
       end
     end
     monthly_posts.keys.sort.inject([]) do |a, year|
@@ -98,13 +98,13 @@ module ExtendBlogging
           %{<%= render "blog_archive", @item.attributes %>},
           {
             :title => "Articles from #{Date::MONTHNAMES[month]} #{year}",
-            :feed_url => "/blog/#{year}/#{"%.2d" % month}/feed/",
+            :feed_url => "/articles/#{year}/#{"%.2d" % month}/feed/",
             :posts => monthly_posts[year][month],
-            :next_url => (months[j+1] != nil ? "/blog/#{year}/#{"%.2d" % months[j+1]}" : (years.keys[i+1] != nil ? "/blog/#{years.keys[i+1]}/#{"%.2d" % years[years.keys[i+1]][0]}" : nil)),
-            :prev_url => (j != 0 ? "/blog/#{year}/#{"%.2d" % months[j-1]}" : (i != 0 ? "/blog/#{years.keys[i-1]}/#{"%.2d" % years[years.keys[i-1]][-1]}" : nil)),
+            :next_url => (months[j+1] != nil ? "/articles/#{year}/#{"%.2d" % months[j+1]}" : (years.keys[i+1] != nil ? "/articles/#{years.keys[i+1]}/#{"%.2d" % years[years.keys[i+1]][0]}" : nil)),
+            :prev_url => (j != 0 ? "/articles/#{year}/#{"%.2d" % months[j-1]}" : (i != 0 ? "/articles/#{years.keys[i-1]}/#{"%.2d" % years[years.keys[i-1]][-1]}" : nil)),
             :year => months
           },
-          "/blog/#{year}/#{"%.2d" % month}/"
+          "/articles/#{year}/#{"%.2d" % month}/"
         )
 
         # Generate atom feed
@@ -113,7 +113,7 @@ module ExtendBlogging
           {
             :posts => monthly_posts[year][month]
           },
-          "/blog/#{year}/#{"%.2d" % month}/feed/"
+          "/articles/#{year}/#{"%.2d" % month}/feed/"
         )
         j += 1
       end
@@ -131,12 +131,12 @@ module ExtendBlogging
         %{<%= render "blog_archive", @item.attributes %>},
         {
           :title => "Articles from #{year}",
-          :feed_url => "/blog/#{year}/feed/",
+          :feed_url => "/articles/#{year}/feed/",
           :posts => monthly_posts[year].values.flatten,
-          :next_url => ("/blog/#{"%s/" % years[i+1]}" unless years[i+1] == nil),
-          :prev_url => ("/blog/#{"%s/" % years[i-1]}" unless i == 0)
+          :next_url => ("/articles/#{"%s/" % years[i+1]}" unless years[i+1] == nil),
+          :prev_url => ("/articles/#{"%s/" % years[i-1]}" unless i == 0)
         },
-        "/blog/#{year}/"
+        "/articles/#{year}/"
       )
 
       # Generate atom feed
@@ -145,7 +145,7 @@ module ExtendBlogging
         {
           :posts => monthly_posts[year].values.flatten
         },
-        "/blog/#{year}/feed/"
+        "/articles/#{year}/feed/"
       )
       i += 1
     end
@@ -162,10 +162,10 @@ module ExtendBlogging
         %{<%= render "blog_archive", @item.attributes %>},
         {
           :title => "Articles tagged \"#{tag}\"",
-          :feed_url => "/blog/tag/#{slugify(tag)}/feed/",
+          :feed_url => "/articles/tag/#{slugify(tag)}/feed/",
           :posts => posts_with_tag(tag),
         },
-        "/blog/tag/#{slugify(tag)}"
+        "/articles/tag/#{slugify(tag)}"
       )
 
       # Generate atom feed
@@ -174,7 +174,7 @@ module ExtendBlogging
         {
           :posts => posts_with_tag(tag)
         },
-        "/blog/tag/#{slugify(tag)}/feed/"
+        "/articles/tag/#{slugify(tag)}/feed/"
       )
     end
   end
@@ -186,7 +186,7 @@ module ExtendBlogging
   def tags_for_post post, params={}
     params ||= {}
     params[:separator]  ||= ", "
-    params[:base_url]   ||= "/blog/tag/"
+    params[:base_url]   ||= "/articles/tag/"
     params[:none_text]  ||= "(none)"
 
     if post[:tags] && !post[:tags].empty?

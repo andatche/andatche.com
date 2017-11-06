@@ -19,7 +19,7 @@ You can also find me on [Twitter](http://twitter.com/andatche), [Github](https:/
 * The [Free Software Foundation](http://www.fsf.org/).
 * [Virtualisation](http://libvirt.org/) on Linux with [KVM](http://www.linux-kvm.org/page/Main_Page).
 * Configuration automation with [Puppet](http://puppetlabs.com).
-* [Network Engineering](/blog/tag/networking/).
+* [Network Engineering](/articles/tag/networking/).
 * [IPv6](http://en.wikipedia.org/wiki/IPv6) proliferation, see what you can do [here](http://www.ipv6actnow.org/). Get your own IPv6 tunnel from [Hurricane Electric](http://www.tunnelbroker.net/).
 * [Minecraft](http://andatche.com/minecraft/), the ultimate time-sink!
 * [Brightbox](http://brightbox.com)'s new Infrastructure-as-a-Service (Cloud) platform.

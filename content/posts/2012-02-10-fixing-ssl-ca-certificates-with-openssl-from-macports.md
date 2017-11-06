@@ -33,7 +33,7 @@ Then symlink the bundle into ``/opt/local/etc/openssl``, the default CApath for 
 sudo ln -s /opt/local/share/curl/curl-ca-bundle.crt /opt/local/etc/openssl/cert.pem
 </pre>
 
-**EDIT:** As one [commenter](http://andatche.com/blog/2012/02/fixing-ssl-ca-certificates-with-openssl-from-macports/#comment-710528627) noted, the above step is no longer necessary. MacPorts' ``curl-ca-bundle @7.24.0`` now creates the symlink during installation.
+**EDIT:** The above step is no longer necessary. MacPorts' ``curl-ca-bundle @7.24.0`` now creates the symlink during installation.
 
 Voilà, working CA cert verification!
 
