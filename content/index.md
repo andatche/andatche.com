@@ -6,9 +6,9 @@ subtitle: System Administrator and packet pusher at <a href="https://brightbox.c
 
 You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldn't be happy sharing. My [PGP key](/andatche.asc) fingerprint is <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>.
 
-You can contact me via Jabber/XMPP at <code>andatche@gmail.com</code> (OTR fingerprint <code>EB519946 DE62C9E8 B325D928 42525D1E BD94395F</code>) or <code>ben@brightbox.co.uk</code> (OTR fingerprint <code>BE7840F3 06D4F37D F18C945F 33A99318 BB8C674E</code>).
+You can contact me via Jabber/XMPP at <code>ben@andatche.com</code> (OTR fingerprint <code>9AB4973E EFBBFFC3 06A41E17 D6A82F1C 6027AF5F</code>) or <code>ben@brightbox.co.uk</code> (OTR fingerprint <code>BE7840F3 06D4F37D F18C945F 33A99318 BB8C674E</code>).
 
-I'm also <code>andatche</code> on the Freenode, Quakenet, fofnet and Terahertz irc networks and Skype. 
+I'm also <code>andatche</code> on the Freenode, Quakenet, fofnet and Terahertz irc networks.
 
 You can also find me on [Twitter](http://twitter.com/andatche), [Github](https://github.com/andatche), [RubyGems](https://rubygems.org/profiles/andatche), [Facebook](http://facebook.com/andatche), [Flickr](http://www.flickr.com/photos/andatche), [Last.fm](http://www.last.fm/user/andatche), [Tumblr](http://sketches.andatche.com), [Launchpad](https://launchpad.net/~andatche), [YouTube](http://www.youtube.com/user/andatche), [Reddit](http://www.reddit.com/user/andatche)...
 
