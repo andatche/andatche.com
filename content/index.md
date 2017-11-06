@@ -1,9 +1,7 @@
 --- 
 title: Ben Arblaster
+subtitle: System Administrator and packet pusher at <a href="https://brightbox.com/">Brightbox</a>, hacker, musician, motorcyclist, cat lover.<br />Interested in network engineering, security, virtualisation, config management, Linux, microcontrollers, classic motorcycles.
 ---
-<h1>Ben Arblaster</h1>
-Sysadmin and packet pusher at [Brightbox](http://brightbox.com), hacker, musician and butler to several cats. Remember, "Friends don't let friends get friends hair cut!" Someday it will prove sound advice.
-
 ## Contact Me
 
 You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldn't be happy sharing. My [PGP key](/andatche.asc) fingerprint is <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>.
@@ -28,9 +26,9 @@ You can also find me on [Twitter](http://twitter.com/andatche), [Github](https:/
 
 ## This site...
 
-is powered by [Nanoc](http://nanoc.stoneship.org/), a simple static site generator. Content is written in [Markdown](http://daringfireball.net/projects/markdown/) and processed using the [kramdown](http://kramdown.rubyforge.org) filter while the layouts are written in [erb](http://en.wikipedia.org/wiki/ERuby). Compilation and deployment is handled by a simple set of [rake](http://rake.rubyforge.org/) tasks and [Capistrano](https://github.com/capistrano/capistrano). Foundations for the layout, styling and typography are provided by Twitter's [Bootstrap CSS](http://twitter.github.com/bootstrap/) library and [jQuery](http://jquery.com/). Blog comments are powered by [Disqus](http://disqus.com) and I use [git](http://git-scm.com/) for version control of the whole thing. The code is on [Github](https://github.com/andatche/andatche.com).
+...is powered by [Nanoc](http://nanoc.stoneship.org/), a simple static site generator. Content is written in [Markdown](http://daringfireball.net/projects/markdown/) and processed using the [kramdown](http://kramdown.rubyforge.org) filter while the layouts are written in [erb](http://en.wikipedia.org/wiki/ERuby). Compilation and deployment is handled by a simple set of [rake](http://rake.rubyforge.org/) tasks and [Capistrano](https://github.com/capistrano/capistrano). Foundations for the layout, styling and typography are provided by Twitter's [Bootstrap CSS](http://twitter.github.com/bootstrap/) library and [jQuery](http://jquery.com/). I use [git](http://git-scm.com/) for version control of the whole thing. The code is on [Github](https://github.com/andatche/andatche.com).
 
-On the server-side, [Apache httpd](http://httpd.apache.org/) running on [Ubuntu GNU/Linux](http://www.ubuntu.com/) hosted on the [Brightbox Cloud](http://brightbox.com). The host is dual-stacked and available via IPv4 and IPv6, hurrah!
+On the server-side, it's [NGINX](https://www.nginx.com/) running on [Ubuntu GNU/Linux](http://www.ubuntu.com/) hosted on the [Brightbox Cloud](http://brightbox.com). The host is dual-stacked and available via IPv4 and IPv6, hurrah!
 
 All generated markup is [valid HTML5](http://validator.w3.org/check?uri=referer).
 

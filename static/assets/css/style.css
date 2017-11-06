@@ -1,73 +1,51 @@
-div.content p {
-  font-size: 1.1em;
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+body {
+  padding-bottom: 20px;
+  font-family: "Avenir-Light";
+}
+
+main {
   line-height: 1.8em;
-  font-weight: 300;
-  color: #555;
 }
 
-div.content .post-meta {
-  margin-bottom: 30px;
+.post-meta {
+  margin-top: 2em !important;
+  margin-bottom: 1em !important;
+  padding: 1em !important;
+  border: 0 !important;
 }
 
-div.content .post-meta .date {
-  font-size: 180%;
-  line-height: 150%;
-  font-weight: normal;
-  letter-spacing: 0.1em;
+footer {
+  font-size: 0.8em;
+  margin-top: 2em;
+  padding-top: 1em;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
 }
 
-div.content .post-meta .tags {
-  font-size: 110%;
-  font-weight: normal;
+.jumbotron {
+  border-bottom: 0;
 }
 
-div.content .sidebar {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #f7f5fa;
-  border-radius: 5px;
+.nav-link {
+  color: white;
 }
 
-.content h1 {
-  /*font-family: Georgia;*/
-  font-size: 3.0em;
-  line-height: 105%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-weight: 300;
+.sidebar {
+  font-size: 0.8em;
+  color: #777;
 }
 
-.content h2 {
-  font-size: 2.0em;
-  line-height: 105%;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-weight: 300;
-}
-
-.content h3 {
-  font-size: 1.5em;
-  line-height: 105%;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-weight: 300;
-}
-
-.content li {
-  font-size: 1.1em;
-  line-height: 1.8em;
-  font-weight: 300;
-  color: #555;
-}
-
-.content img.centered {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding: 15px;
+ul.article-list span.article-date {
+  margin-right: 2em;
+  color: #777;
+  font-size: 0.8em;
 }
 
 div#disqus_thread {
@@ -77,90 +55,3 @@ div#disqus_thread {
 div#disqus_thread p {
   font-size: 0.9em;
 }
-
-ul.pager {
-  margin-top: 50px;
-}
-
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-family: "Open Sans", sans-serif;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-  margin-top: 50px;
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 900px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-

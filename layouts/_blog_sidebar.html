@@ -1,16 +1,20 @@
 <div class="sidebar">
     <h2>Archives</h2>
       <ul class="list-unstyled">
-      <% monthly_archives.each do |ma| %>
+      <% yearly_archives.each do |ya| %>
         <li>
-          <%# <a href="/blog/2011/11/">November 2011</a> %>
-          <a href="<%= ma.to_path %>"><%= ma.to_s %></a>
+          <a href="<%= ya.to_path %>"><%= ya.to_s %></a>
         </li>
       <% end %>
-    <h2>Tags</h2>
+      </ul>
+    <h2>Topics</h2>
+      <ul class="list-unstyled">
         <% all_post_tags.sort.each do |tag| %>
-        <a href="<%= "/blog/tag/#{slugify(tag)}" %>"><span class="badge"><%= "#{tag}" %></span></a>
+        <li>
+          <a href="<%= "/blog/tag/#{slugify(tag)}" %>"><%= "#{tag}" %></a>
+        </li>
         <% end %>
+      </ul>
     <h2>Feeds</h2>
       <ul class="list-unstyled">
         <li><a href="<%= @item[:feed_url] %>">atom</a></li>

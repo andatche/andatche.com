@@ -19,6 +19,7 @@ module ExtendBlogging
     posts.each do |item|
       item[:kind] ||= "article"
       item[:created_at] ||= extract_post_created_at(item)
+      item[:subtitle] ||= (time = attribute_to_time(extract_post_created_at(item))).strftime("%A %e#{time.day_ordinal_suffix} of %B %Y")
     end
     posts
   end
@@ -44,6 +45,22 @@ module ExtendBlogging
       hash[year] = months.keys
       hash
     end.map { |year, months| months.map { |month| ma.new(year, month) } }.flatten.sort_by {|e| [e.year, e.month] }.reverse
+  end
+
+  def yearly_archives
+    ya = Struct.new(:year) do
+      def to_s
+        "#{year}"
+      end
+
+      def to_path
+        "/blog/#{year}/"
+      end
+    end
+    monthly_posts.keys.sort.inject([]) do |a, year|
+      a.push(ya.new(year))
+      a
+    end.reverse
   end
 
   def monthly_posts
@@ -80,7 +97,7 @@ module ExtendBlogging
         @items << Nanoc3::Item.new(
           %{<%= render "blog_archive", @item.attributes %>},
           {
-            :title => "from #{Date::MONTHNAMES[month]} #{year}",
+            :title => "Articles from #{Date::MONTHNAMES[month]} #{year}",
             :feed_url => "/blog/#{year}/#{"%.2d" % month}/feed/",
             :posts => monthly_posts[year][month],
             :next_url => (months[j+1] != nil ? "/blog/#{year}/#{"%.2d" % months[j+1]}" : (years.keys[i+1] != nil ? "/blog/#{years.keys[i+1]}/#{"%.2d" % years[years.keys[i+1]][0]}" : nil)),
@@ -92,7 +109,7 @@ module ExtendBlogging
 
         # Generate atom feed
         @items << Nanoc3::Item.new(
-          %{<%= atom_feed :title => "andatche.com - archived posts from #{Date::MONTHNAMES[month]} #{year}", :articles => @item[:posts], :limit => 25 %>},
+          %{<%= atom_feed :title => "andatche.com - archived articles from #{Date::MONTHNAMES[month]} #{year}", :articles => @item[:posts], :limit => 25 %>},
           {
             :posts => monthly_posts[year][month]
           },
@@ -113,7 +130,7 @@ module ExtendBlogging
       @items << Nanoc3::Item.new(
         %{<%= render "blog_archive", @item.attributes %>},
         {
-          :title => "from #{year}",
+          :title => "Articles from #{year}",
           :feed_url => "/blog/#{year}/feed/",
           :posts => monthly_posts[year].values.flatten,
           :next_url => ("/blog/#{"%s/" % years[i+1]}" unless years[i+1] == nil),
@@ -144,7 +161,7 @@ module ExtendBlogging
       @items << Nanoc3::Item.new(
         %{<%= render "blog_archive", @item.attributes %>},
         {
-          :title => "tagged \"#{tag}\"",
+          :title => "Articles tagged \"#{tag}\"",
           :feed_url => "/blog/tag/#{slugify(tag)}/feed/",
           :posts => posts_with_tag(tag),
         },

@@ -1,8 +1,19 @@
 <%= render "_header" %>
 <%= render "_nav" %>
 
-      <div class="content">
-        <%= yield %>
-      </div> <!-- content -->
+    <div class="jumbotron jumbotron-fluid bg-dark text-white text-left">
+      <header class="container">
+        <h1><%= "#{@item[:title]}" %></h1>
+        <p><%= "#{@item[:subtitle]}" %></p>
+      </header>
+    </div>
+
+    <main class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-12">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
 
 <%= render "_footer" %>

@@ -1,7 +1,12 @@
-      <div class="footer">
-        <p>Last modified: <%= @item[:mtime] != nil ? @item[:mtime].strftime("%A %B %d, %Y at %H:%M:%S %Z") : Time.now.strftime("%A %B %d, %Y at %H:%M:%S %Z") %> 
-        &copy; Copyright Ben Arblaster 2004-<%= Time.now.strftime("%Y") %></p>
-      </div> <!-- footer -->
-    </div> <!-- /container -->
+    <footer class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-6">
+          <p>Last modified: <%= @item[:mtime] != nil ? @item[:mtime].strftime("%A %B %d, %Y at %H:%M:%S %Z") : Time.now.strftime("%A %B %d, %Y at %H:%M:%S %Z") %></p>
+        </div>
+        <div class="col-sm-6 text-right">
+          <p>&copy; Copyright Ben Arblaster 2004-<%= Time.now.strftime("%Y") %></p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

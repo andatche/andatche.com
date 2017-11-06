@@ -1,11 +1,11 @@
 --- 
-title: Recent Blog Posts
+title: Recent Articles
+jumbo: true
 feed_url: /blog/feed/
 --- 
-    <h1>Recent Blog Posts</h1>
 <div class="row">
   <div class="col-md-9">
-    <ul class="list-unstyled">
+    <ul class="list-unstyled article-list">
       <% recent_posts.each do |post| %>
         <%= render "_blog_post_summary", :post => post %>
       <% end %>
