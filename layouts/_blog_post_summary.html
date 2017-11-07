@@ -1,4 +1,4 @@
   <li>
-    <span class="article-date"><%= attribute_to_time(@post[:created_at]).strftime("%d %b %Y") %></span>
+    <span class="article-date mr-sm-2 d-block d-sm-inline"><%= attribute_to_time(@post[:created_at]).strftime("%d %b %Y") %></span>
     <a href="<%= @post.path %>"><%= @post[:title] %></a>
   </li>

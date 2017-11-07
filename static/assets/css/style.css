@@ -1,5 +1,5 @@
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .container {
     max-width: 900px;
   }
@@ -45,17 +45,15 @@ footer {
   border-bottom: 0;
 }
 
-.nav-link {
-  color: white;
+nav.nav-link {
+  color: white !important;
 }
 
 .sidebar {
-  font-size: 0.8em;
   color: #777;
 }
 
 ul.article-list span.article-date {
-  margin-right: 2em;
   color: #777;
   font-size: 0.8em;
 }

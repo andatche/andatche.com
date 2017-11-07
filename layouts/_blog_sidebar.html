@@ -1,22 +1,25 @@
 <div class="sidebar">
-    <h2>Archives</h2>
-      <ul class="list-unstyled">
-      <% yearly_archives.each do |ya| %>
-        <li>
-          <a href="<%= ya.to_path %>"><%= ya.to_s %></a>
-        </li>
-      <% end %>
-      </ul>
-    <h2>Topics</h2>
-      <ul class="list-unstyled">
-        <% all_post_tags.sort.each do |tag| %>
+  <h2>Archives</h2>
+  <ul class="list-unstyled">
+    <li>
+      <a class="dropdown-toggle" href="#" data-toggle="collapse" data-target="#topicList" aria-controls="topicList" aria-expanded="false" aria-label="Toggle navigation">By Topic</a>
+      <ul class="list-unstyled collapse navbar-collapse ml-3" id="topicList">
+      <% all_post_tags.sort.each do |tag| %>
         <li>
           <a href="<%= "/articles/tag/#{slugify(tag)}" %>"><%= "#{tag}" %></a>
         </li>
-        <% end %>
+      <% end %>
       </ul>
-    <h2>Feeds</h2>
-      <ul class="list-unstyled">
-        <li><a href="<%= @item[:feed_url] %>">atom</a></li>
-      </ul>
+    </li>
+  <% yearly_archives.each do |ya| %>
+    <li>
+      <a href="<%= ya.to_path %>"><%= ya.to_s %></a>
+    </li>
+  <% end %>
+  </ul>
+
+  <h2>Feeds</h2>
+  <ul class="list-unstyled">
+    <li><a href="<%= @item[:feed_url] %>">atom</a></li>
+  </ul>
 </div>
