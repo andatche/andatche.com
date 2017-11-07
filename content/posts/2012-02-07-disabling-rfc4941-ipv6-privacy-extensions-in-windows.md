@@ -25,7 +25,7 @@ In addition to this, the RFC states that the use of temporary addresses should b
 > applications, which have specific knowledge about the normal duration
 > of connections, MAY override this as appropriate.
 
-Windows Vista and Windows 7 ignore the advice of the RFC and also configure temporary global or unique local addresses as per RFC 4941 (OS X also does this since 10.7). This behaviour is disabled by default on Windows Server 2008.
+Windows Vista and Windows 7 ignore the advice of the RFC and also configure temporary global or unique local addresses as per RFC 4941 (**EDIT:** OS X also does this since 10.7, so do many Linux distros). This behaviour is disabled by default on Windows Server 2008.
 
 To disable privacy extensions entirely, fire up cmd.exe and issue the following.
 

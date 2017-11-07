@@ -4,7 +4,11 @@ author: Ben
 tags: [brightbox, cloud, linux, sysadmin]
 ---
 
-I've been playing with PXE booting servers on the <a href="http://beta.brightbox.com/beta">Brightbox cloud</a> over the last few days, which is rather cool! It's also incredibly useful for building OS images which can be snapshotted and registered for later use. It's quite simple really, here's a quick guide.
+<div class="alert alert-warning" role="alert">
+This guide is now somewhat out of date. For more recent information please consult the <a href="https://www.brightbox.com/docs/">Brightbox Cloud docs</a> instead.
+</div>
+
+I've been playing with PXE booting servers on <a href="http://beta.brightbox.com/beta">Brightbox cloud</a> over the last few days, which is rather cool! It's also incredibly useful for building OS images which can be snapshotted and registered for later use. It's quite simple really, here's a quick guide.
 
 If you haven't already, go ahead and register for the cloud beta, read through the docs about getting started and make yourself familiar with the basics of the command line client.
 
@@ -17,7 +21,7 @@ Creating a nano (typ-4nssg) server with image Ubuntu Lucid 10.04 server (img-2ab
 ------------------------------------------------------------------------------
  srv-m1tgj  creating  nano  gb1-b  2011-04-18  img-2ab98             PXE Boot
 ------------------------------------------------------------------------------</pre>
-It doesn't really matter which image you choose at this point, if you're PXE booting an installer it's likely you'll be erasing and repartitioning the disk anyway (there'll be some blank images available soon). If you're intending to snapshot the server for registration as a machine image later, it's best to use the smallest disk possible as this will be the minimum required for your image later on. In this case we're using a nano, the default, with a 20GB disk.
+It doesn't really matter which image you choose at this point, if you're PXE booting an installer it's likely you'll be erasing and repartitioning the disk anyway (there'll be some blank images available soon). If you're intending to snapshot the server for registration as a machine image later, it's best to use the smallest disk available, as this will be the minimum required for your image later on. In this case we're using a nano, the default, with a 20GB disk.
 
 Once the server has finished creating, activate its web-based console so we can get to the POST screen.
 <pre>ben@spud:~$ brightbox-servers activate_console srv-m1tgj
@@ -34,7 +38,7 @@ Fire up your web browser and login to the console. Once logged in hit the "Send 
 
 gPXE is a GPL'd replacement for proprietary PXE boot ROMs that has lots of nice features, including the ability to boot from HTTP, which we're going to make use of here.
 
-There are a number of choices when it comes to deciding exactly what we'd like to boot from here, I'll cover 3 options that are useful for image building.
+There are a number of choices when it comes to deciding exactly what we'd like to boot from, I'll cover three options that are useful for image building.
 <ul>
   <li>Booting a preprepared initrd and kernel image</li>
   <li>Booting an ISO with memdisk</li>
@@ -59,7 +63,9 @@ gPXE&gt; initrd http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/imag
 > http://ftp.scientificlinux.org/linux/scientific/6.0/i386/os/images/pxeboot/initrd.img...............
 ..................................................</pre>
 
-It can take quite a long time for them to download, particularly if the initrd.img is large, gPXE's TCP stack isn't really tuned for performance. It's generally a lot quicker if you use a mirror that's geographically close (to the UK in this case), latency seems to have a huge impact. Anyway, once the downloads have finished, we're ready to boot!
+It can take quite a long time for them to download, particularly if the initrd.img is large. gPXE's TCP stack isn't tuned for performance. It's generally a lot quicker if you use a mirror that's geographically close (to the UK in this case), as latency has a significant impact on performance due to gPXE's lack of TCP window scaling.
+
+Anyway, once the downloads have finished, we're ready to boot!
 
 <pre>gPXE> boot</pre>
 

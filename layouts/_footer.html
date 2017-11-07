@@ -2,7 +2,7 @@
     <footer class="container">
       <div class="row">
         <div class="col-md-auto ml-0 mr-auto">
-          <p>Last modified: <%= @item[:mtime] != nil ? @item[:mtime].strftime("%A %B %d, %Y at %H:%M:%S %Z") : Time.now.strftime("%A %B %d, %Y at %H:%M:%S %Z") %></p>
+            <p>Last modified: <%= @item[:mtime] != nil ? (time = @item[:mtime]).strftime("%A %e#{time.day_ordinal_suffix} of %b %Y at %H:%M:%S %Z") : Time.now.strftime("%A %e#{Time.now.day_ordinal_suffix} of %b %Y at %H:%M:%S %Z") %></p>
         </div>
         <div class="col-md-auto">
           <p>&copy; Copyright Ben Arblaster 2004-<%= Time.now.strftime("%Y") %></p>
