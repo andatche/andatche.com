@@ -1,11 +1,10 @@
-/* Customize container */
 @media (min-width: 992px) {
   .container {
     max-width: 900px;
   }
 }
 
-/* Webfont: Lato-Light */@font-face {
+@font-face {
     font-family: 'LatoWebLight';
     src: url('/assets/fonts/Lato-Light.eot'); /* IE9 Compat Modes */
     src: url('/assets/fonts/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -17,20 +16,19 @@
     text-rendering: optimizeLegibility;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-bottom: 20px;
   font-family: "LatoWebLight", sans-serif;;
+  margin-bottom: 60px;
 }
 
 main {
   line-height: 1.8em;
-}
-
-.post-meta {
-  margin-top: 2em !important;
-  margin-bottom: 1em !important;
-  padding: 1em !important;
-  border: 0 !important;
 }
 
 footer {
@@ -39,14 +37,6 @@ footer {
   padding-top: 1em;
   color: #777;
   border-top: 1px solid #e5e5e5;
-}
-
-.jumbotron {
-  border-bottom: 0;
-}
-
-nav.nav-link {
-  color: white !important;
 }
 
 .sidebar {
@@ -58,10 +48,15 @@ ul.article-list span.article-date {
   font-size: 0.8em;
 }
 
-div#disqus_thread {
-  padding: 15px;
+.post-meta {
+  margin-top: 2em !important;
+  margin-bottom: 1em !important;
+  padding: 1em !important;
+  border: 0 !important;
 }
 
-div#disqus_thread p {
-  font-size: 0.9em;
+.bottom-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
