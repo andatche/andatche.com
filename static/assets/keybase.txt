@@ -1,0 +1,87 @@
+==================================================================
+https://keybase.io/andatche
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://andatche.com
+      * I am andatche (https://keybase.io/andatche) on keybase.
+          * I have a public key with fingerprint 7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01016945da487e70c32d1f8c1d90e6d5113c6a190b6f0d6097d64da28245437964c40a",
+      "fingerprint": "7a25b9cbd644a3f55615b193a5455b42e54ac47a",
+      "host": "keybase.io",
+      "key_id": "a5455b42e54ac47a",
+      "kid": "01016945da487e70c32d1f8c1d90e6d5113c6a190b6f0d6097d64da28245437964c40a",
+      "uid": "a38f0bd4dddab2d0a4608a73ee68af00",
+      "username": "andatche"
+    },
+    "merkle_root": {
+      "ctime": 1510051298,
+      "hash_meta": "ad83d1ff4aac6068e7f54289e009307239ffd321caec6df2d4be3b19b73f7cc1",
+      "seqno": 1675635
+    },
+    "revoke": {
+      "sig_ids": [
+        "deb3023245e76dabb40262cbb302d89b956ba61df8676a5924255946d17ccf100f"
+      ]
+    },
+    "service": {
+      "hostname": "andatche.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1510051304,
+  "expire_in": 157680000,
+  "prev": "6f23b9f53ff18707ba5d813c2510240f6d25ef7d79500c93f8a041cebb23e3d2",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtU2tsFUUYvYWWhjZCH7QiSmi3RQxc6+xjZncvIpGXtCCo0GK4wM3sziy9vb13
+291tyzsIDV6khMYaUXmKkCigiG0ILSLQIpZUXtYqAoFSwICYUKRVUkh1FiVR40/3
+z2RnznfO+c43U/1IX09CzI6J/nHX8o4uimm5oXlmx6y9tZjTTLKQ8y3mQvTBQosJ
+tZ1AKEg4Hwd4wCNVggRLikxloIsC4Q1F54kKKCKQ50UdYV4FGjIAQUCVCZIIFhRB
+gpIoq0jSJYA5L2cEI/OpVWIFIw6jlbEANVXXGFjCogEh4qHGqyKGEoSaJFAoYV2S
+3cJC03YrmDkN2zQnaLI99hN4YO8/8P+z77I/dUTFABqRCCFYEwjAEgIKlkVKkYIN
+AFygTa0IDlMXHSHY0Qspt9TLhakVKqYByzQdN1zdCboQHvIAQF5QFdYgtgsDYepg
+t5IoIvNpSBjrCCCFygaUBEWlAKgikAVRNQwiCryOqY6IIRBJoyILTpNFQ9Z1nvmw
+aWnEZApIhkiEzIFFy80QdcXt4HwWm835/Byhmni4Aggi65fKiHWlSUBAgq5pIhCI
+omoqRBpGPDEUJCMMVUESIFQlRHgmZDD7Bjd3qStnlQf1B/TupP6VQI5uhpmnEst0
+TN0sZieFjlNi+9xknIUlLrSCaoG/SAJaMELYPWEV5dSyg2aE9cGQ/wxNBJKXowtK
+ghYNBF0ElJEC2Ofq0HJGiQxB1FQDiobBKzKQNQyJwgYuMAJBAgYiAqSGTGQVAqCr
+oqFgIPE61TRBpCIR/pYiz3zi+YyTZRfBTpnFhpqwuo8Y64lJ8AxNz4xdNLy+5bsJ
+H3QXpO2tefi24vq4D8uT0D/p4c4bswf2Zq0b4+nISowUPMW93fhZ5dettTdTX89d
+fmpYVar+5Z0xQtumw/7sqefT1qDB67kDF57Mu+zr2dh487eihKOpn86auaejoKmB
+b2+aVnf+Yq/3xO0BPnNP+q096ZUrz1U0Vw55trV+29Xd+Vt+Ojeg9vrR0qz7+1oO
+xY5NDi+76/UdmV7j3H5m6At3Q7MuHEzK+XX02OHvF+RfmfPRvNaOKbXn8i6+u2ba
+j6sKll+denV3zuTeCNyXcr+osTTjtbjOpFc9dT9kzZpxP/RxMPlW5/Yhkz6PdveL
+Wda33/6MD6P+by9Xn36sfaQ9V3rnzBeLVqaQLiO3+86Cl/ZvchJ8LfnR7oxlI4d4
+D66/5z2kxO5O21zvfdTaZTXUZLV6B3d61239PuTfzvXEjy63Uwurcn9fO8g799SJ
+0h3XKt8Ex+J63ituX9OcWZ39TXPivJO9uZ90905/a8bkLn9+7ZRtE5sb8o407FzS
+tffmE0dukLLWr+p+Pt29YlTTRLByw+0XJ8fDzOxJDbtyd45tPdNVedefeKltc/9x
+PRdW129pm/P0utXqoLZXonAUDJ+VPWeTo1ceT6uKjk+8d3zrnaFbt41Y0DjC3JSS
+nbmqccnLtGFj+8mB1R1NdeGaaPrx5LrnZ4bOZ1yqbTxwuprrv6Hv2uvxw5LGtKPe
+0Mxhy8ueG58cY4/o6qltK+r0HoirOlaR5Fvxy6GBReQP
+=EWGz
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/andatche
+
+==================================================================
+
+
