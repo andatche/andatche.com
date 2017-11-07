@@ -1,7 +1,7 @@
 ---
 title: Now with Nanoc!
 author: Ben
-tags: [nanoc, blogging, ruby]
+tags: [web, ruby, misc]
 ---
 For a while now I've been meaning to take a look at [Nanoc](https://nanoc.ws/). For the uninitiated, it's a static [web]site generator written in Ruby.
 

@@ -1,7 +1,7 @@
 ---
 title: PGP key BC430B14 revoked
 author: Ben
-tags: [pgp, security, misc]
+tags: [security, misc]
 ---
 
 I have revoked my PGP key <code>BC430B14</code> (fingerprint <code>58A8 46A9 8CC1 792F 2028 9D2B 5D74 9169 BC43 0B14</code>), which has been superseded by key <code>E54AC47A</code> (fingerprint <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>). Please update your keyrings as necessary.

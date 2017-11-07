@@ -1,7 +1,7 @@
 ---
 title: New OTR keys
 author: Ben
-tags: [jabber, security, misc]
+tags: [security, misc]
 ---
 
 I've generated new OTR keys for both my Jabber accounts, new fingerprints are as follows.

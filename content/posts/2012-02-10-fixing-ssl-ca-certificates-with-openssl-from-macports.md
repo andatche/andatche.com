@@ -1,7 +1,7 @@
 ---
 title: Fixing SSL CA certificates with OpenSSL from MacPorts
 author: Ben
-tags: [os x, sysadmin, ssl]
+tags: [os x, sysadmin]
 ---
 
 If you've installed OpenSSL from [MacPorts](http://www.macports.org/) (or anything that depends on it), you've probably come across issues with verifying SSL certificates in applications built against it.
