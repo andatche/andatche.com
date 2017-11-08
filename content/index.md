@@ -1,6 +1,6 @@
 --- 
 title: Ben Arblaster
-subtitle: System Administrator and packet pusher at <a href="https://brightbox.com/">Brightbox</a> (AS51059). Interested in network engineering, security, virtualisation, config management, free software, Linux, hardware hacking/microcontrollers, music, motorcycles &amp; cats.
+subtitle: System Administrator and packet pusher at <a href="https://brightbox.com/">Brightbox</a> (AS51059). Interested in Linux, network engineering, security, virtualisation, config management, hardware hacking/microcontrollers, music, motorcycles, cats.
 ---
 ## Contact Me
 
