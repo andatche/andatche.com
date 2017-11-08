@@ -1,10 +1,10 @@
 --- 
 title: Ben Arblaster
-subtitle: System Administrator and packet pusher at <a href="https://brightbox.com/">Brightbox</a> (AS51059). Interested in Linux, network engineering, security, virtualisation, config management, hardware hacking/microcontrollers, music, motorcycles, cats.
+subtitle: System Administrator and packet pusher at <a href="https://brightbox.com/">Brightbox</a> (AS51059). Interested in GNU/Linux, network engineering, security, virtualisation, config management, hardware hacking/microcontrollers, music, motorcycles, cats.
 ---
 ## Contact Me
 
-You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldn't be happy sharing. My [PGP key](/andatche.asc) fingerprint is <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>.
+You can send me an email to [ben@andatche.com](mailto:ben@andatche.com), I prefer plain text email. Please encrypt anything you wouldn't be happy sharing. My [PGP key](/andatche.asc) ID is <code>E54AC47A</code> and the fingerprint is <code>7A25 B9CB D644 A3F5 5615  B193 A545 5B42 E54A C47A</code>.
 
 You can contact me via Jabber/XMPP at <code>ben@andatche.com</code> (OTR fingerprint <code>9AB4973E EFBBFFC3 06A41E17 D6A82F1C 6027AF5F</code>) or <code>ben@brightbox.co.uk</code> (OTR fingerprint <code>BE7840F3 06D4F37D F18C945F 33A99318 BB8C674E</code>).
 

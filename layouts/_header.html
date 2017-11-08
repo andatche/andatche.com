@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= "#{@item[:title]} - " if @item[:title] %>andatche.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ben Arblaster">
+    <title><%= "#{@item[:title]} - " if @item[:title] %>andatche.com</title>
+
+    <%= meta_description %>
+
     <% if @item[:feed_url] %>
+    <!-- atom feed -->
     <link rel="alternate" type="application/rss+xml" title="andatche.com &raquo; Feed" href="<%= "#{@item[:feed_url]}" %>" />
     <% end %>
 
@@ -13,19 +18,21 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
+    <!-- Bootstrap css -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
+    <!-- Bootstrap js -->
     <script src="/assets/js/jquery/jquery-3.2.1.min.js"></script>
     <script src="/assets/js/popper/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/google-code-prettify/prettify.js"></script>
 
+    <!-- favicon -->
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
 
+    <!-- Google Analytics -->
     <script type="text/javascript">
         var domainroot="andatche.com"
 
