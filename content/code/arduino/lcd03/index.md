@@ -1,3 +1,6 @@
+---
+title: LCD03 Arduino library
+---
 # LCD03 Arduino library
 
 LCD03 is an [Arduino](http://arduino.cc/) library for [I2C](http://en.wikipedia.org/wiki/I²C) control of the LCD03 20x4 and 16x2 serial LCD modules from [Robot Electronics](http://www.robot-electronics.co.uk), see [the datasheet](http://www.robot-electronics.co.uk/htm/Lcd03tech.htm) for details. It aims to maintain compatibility with the Arduino [LiquidCrystal](http://arduino.cc/en/Reference/LiquidCrystal) library (version 0017 onwards) , though some features of LiquidCrystal are ommited and additonal features are provided. It supports all features of the LCD03 including custom characters and the ability to read the keypad. Supports Arudino 1.0.0 and newer.
