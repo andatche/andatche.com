@@ -39,9 +39,10 @@ New LCD03 at `i2c_address`. The parameter is optional and defaults to LCD03's de
 ### begin(cols, rows, [i2c_sda], [i2c_scl])
 
 Initialise the display of size `cols` * `rows`, clear the display and set the cursor to the top-left.
-*cols (uint8_t): the number of display columns*--
-*rows (uint8_t): the number of display rows*--
-*i2c_sda (uint8_t): the data pin for the i2c connection (optinal, defaults to setting SDA from Wire.h)*--                                                                                                 *i2c_scl (uint8_t): the clock pin for the i2c connection (optinal, defaults to setting SCL from Wire.h)*--
+*cols (uint8_t): the number of display columns*  
+*rows (uint8_t): the number of display rows*  
+*i2c_sda (uint8_t): the data pin for the i2c connection (optinal, defaults to setting SDA from Wire.h)*  
+*i2c_scl (uint8_t): the clock pin for the i2c connection (optinal, defaults to setting SCL from Wire.h)*
 
 ### clear()
 
@@ -61,7 +62,7 @@ Move the cursor to `pos`.
 
 Move the cursor to `col`, `row`.
 
-*col (uint8_t): column, Arduino format (0-19)*
+*col (uint8_t): column, Arduino format (0-19)*  
 *row (uint8_t): row, Arduino format (0-3)*
 
 ### write(data)
