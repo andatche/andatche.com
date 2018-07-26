@@ -10,7 +10,7 @@ You can contact me via Jabber/XMPP at <code>ben@andatche.com</code> (OTR fingerp
 
 I'm also <code>andatche</code> on the Freenode, Quakenet, fofnet and Terahertz irc networks.
 
-You can also find me on [Twitter](http://twitter.com/andatche), [Github](https://github.com/andatche), [RubyGems](https://rubygems.org/profiles/andatche), [Facebook](http://facebook.com/andatche), [Flickr](http://www.flickr.com/photos/andatche), [Last.fm](http://www.last.fm/user/andatche), [Tumblr](http://sketches.andatche.com), [Launchpad](https://launchpad.net/~andatche), [YouTube](http://www.youtube.com/user/andatche), [Reddit](http://www.reddit.com/user/andatche)...
+You can also find me on [Twitter](http://twitter.com/andatche), [Github](https://github.com/andatche), [RubyGems](https://rubygems.org/profiles/andatche), [Facebook](http://facebook.com/andatche), [Flickr](http://www.flickr.com/photos/andatche), [Last.fm](http://www.last.fm/user/andatche), [Launchpad](https://launchpad.net/~andatche), [YouTube](http://www.youtube.com/user/andatche), [Reddit](http://www.reddit.com/user/andatche)...
 
 ## Some stuff I'm interested in
 
